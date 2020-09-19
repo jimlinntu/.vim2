@@ -45,9 +45,15 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Utility
 Plugin 'ctrlpvim/ctrlp.vim' " File finder for Vim
+Plugin 'Yggdroot/indentLine'
+Plugin 'scrooloose/nerdtree'
+Plugin 'majutsushi/tagbar'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-commentary'
 
 " Git Support
 Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
 
 " HTML
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
@@ -66,6 +72,8 @@ filetype plugin indent on    " required
 """"""""""""""""""""""""""""""""""""""""""
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 nnoremap <leader><space> :nohlsearch<CR>
+nmap <F7> :NERDTreeToggle<CR>
+nmap <F8> :TagbarToggle<CR>
 
 " Frequently used command
 " Ctrl-W_z: Close any Preview window
@@ -78,3 +86,16 @@ nnoremap <leader><space> :nohlsearch<CR>
 """"""""""""""""""""""""""""""""""""""""""
 let g:gruvbox_contrast_dark='hard'
 colorscheme gruvbox
+
+""""""""""""""""""""""""""""""""""""""""""
+" indentLine
+""""""""""""""""""""""""""""""""""""""""""
+" https://vi.stackexchange.com/questions/7258/how-do-i-prevent-vim-from-hiding-symbols-in-markdown-and-json
+let g:indentLine_fileTypeExclude = ['json', 'markdown']
+let g:indentLine_color_term = 239
+let g:indentLine_char = '|'
+
+""""""""""""""""""""""""""""""""""""""""""
+" GitGutter
+""""""""""""""""""""""""""""""""""""""""""
+let g:gitgutter_max_signs = 3000
