@@ -55,6 +55,9 @@ Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-commentary'
 
+" Code Completion
+Plugin 'Valloric/YouCompleteMe'
+
 " Git Support
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
@@ -119,6 +122,13 @@ let g:gitgutter_max_signs = 3000
 " vim-airline
 """"""""""""""""""""""""""""""""""""""""""
 let g:airline#extensions#tabline#enabled = 1
+
+""""""""""""""""""""""""""""""""""""""""""
+" YCM
+""""""""""""""""""""""""""""""""""""""""""
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
+let g:ycm_confirm_extra_conf = 0
+let g:ycm_max_diagnostics_to_display = 0
 
 """"""""""""""""""""""""""""""""""""""""""
 " A collection of my commands
