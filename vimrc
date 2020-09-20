@@ -30,6 +30,10 @@ set backspace=indent,eol,start
 
 set background=dark
 let mapleader=","
+set foldmethod=syntax
+set list
+" https://vi.stackexchange.com/questions/422/displaying-tabs-as-characters
+set listchars=tab:!\ ,trail:·
 
 """"""""""""""""""""""""""""""""""""""""""
 " Vundle
@@ -74,12 +78,23 @@ vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 nnoremap <leader><space> :nohlsearch<CR>
 nmap <F7> :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR>
+" https://stackoverflow.com/questions/23695727/vim-highlight-a-word-with-without-moving-cursor
+nnoremap * *``
 
+""""""""""""""""""""""""""""""""""""""""""
+" Commands
+""""""""""""""""""""""""""""""""""""""""""
+" Create a tags file over this folder
+command! MakeTags !ctags -R .
+
+""""""""""""""""""""""""""""""""""""""""""
 " Frequently used command
+""""""""""""""""""""""""""""""""""""""""""
 " Ctrl-W_z: Close any Preview window
 " Ctrl-W [hjkl]: Move around windows
 " Ctrl-W q: Close a window
 " gt, gT: Move around tabs
+" za, zA, zR, zM: open and close folds
 
 """"""""""""""""""""""""""""""""""""""""""
 " Gruvbox
@@ -99,3 +114,31 @@ let g:indentLine_char = '|'
 " GitGutter
 """"""""""""""""""""""""""""""""""""""""""
 let g:gitgutter_max_signs = 3000
+
+""""""""""""""""""""""""""""""""""""""""""
+" vim-airline
+""""""""""""""""""""""""""""""""""""""""""
+let g:airline#extensions#tabline#enabled = 1
+
+""""""""""""""""""""""""""""""""""""""""""
+" A collection of my commands
+""""""""""""""""""""""""""""""""""""""""""
+augroup mycommands
+    " https://vim.fandom.com/wiki/Folding
+    " prevents having the autocommands defined twice
+    " https://vi.stackexchange.com/questions/9455/why-should-i-use-augroup
+    au!
+    " set Python default foldmethod
+    autocmd BufReadPre *.py set foldmethod=indent
+
+    " Preserve the buffer position when switching them
+    " https://stackoverflow.com/questions/4251533/vim-keep-window-position-when-switching-buffers
+    if v:version >= 700
+        au BufLeave * let b:winview = winsaveview()
+        au BufEnter * if(exists('b:winview')) | call winrestview(b:winview) | endif
+    endif
+
+    " Unfold all after reading a buffer
+    " https://stackoverflow.com/questions/8316139/how-to-set-the-default-to-unfolded-when-you-open-a-file
+    au BufRead * normal zR
+augroup END
