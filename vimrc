@@ -7,6 +7,8 @@ set encoding=utf8
 " Line numbers
 set number
 set relativenumber
+" Show the cursorline
+set cursorline
 " Allow unsaved hidden buffers
 set hidden
 " Tab related
@@ -54,6 +56,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-unimpaired'
 
 " Code Completion
 Plugin 'Valloric/YouCompleteMe'
@@ -103,6 +106,9 @@ command! MakeTags !ctags -R .
 " gt, gT: Move around tabs
 " za, zA, zR, zM: open and close folds
 " Ctrl-], g]: jump to the tag under the cursor
+" [b, ]b: :bprevious, :bnext (from vim-unimpaired)
+" [q, ]q: :cprevious, :cnext (from vim-unimpaired)
+" [<Space>, ]<Space>: add a new line before or after this cursor line
 
 """"""""""""""""""""""""""""""""""""""""""
 " Gruvbox
