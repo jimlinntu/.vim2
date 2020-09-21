@@ -83,6 +83,10 @@ nmap <F7> :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR>
 " https://stackoverflow.com/questions/23695727/vim-highlight-a-word-with-without-moving-cursor
 nnoremap * *``
+" See: https://learnvimscriptthehardway.stevelosh.com/chapters/32.html
+" See: https://www.reddit.com/r/vim/comments/otbx2/help_how_to_not_jump_to_the_first_entry_of_the/
+" Run :Ggrep on the current word and then open the quickfix list
+nnoremap <leader>gg :Ggrep! <cword><cr>:copen<cr>
 
 """"""""""""""""""""""""""""""""""""""""""
 " Commands
@@ -98,6 +102,7 @@ command! MakeTags !ctags -R .
 " Ctrl-W q: Close a window
 " gt, gT: Move around tabs
 " za, zA, zR, zM: open and close folds
+" Ctrl-], g]: jump to the tag under the cursor
 
 """"""""""""""""""""""""""""""""""""""""""
 " Gruvbox
