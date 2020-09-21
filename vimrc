@@ -109,6 +109,9 @@ command! MakeTags !ctags -R .
 " [b, ]b: :bprevious, :bnext (from vim-unimpaired)
 " [q, ]q: :cprevious, :cnext (from vim-unimpaired)
 " [<Space>, ]<Space>: add a new line before or after this cursor line
+" Ctrl-P: open ctrlp prompt
+" (inside the ctrlp prompt) <cr>, <c-cr>: open in this window, open in a horiz split window
+" (inside the ctrlp prompt) <c-j>, <c-k>: move inside the prompt
 
 """"""""""""""""""""""""""""""""""""""""""
 " Gruvbox
