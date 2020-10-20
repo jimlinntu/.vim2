@@ -90,6 +90,8 @@ nnoremap * *``
 " See: https://www.reddit.com/r/vim/comments/otbx2/help_how_to_not_jump_to_the_first_entry_of_the/
 " Run :Ggrep on the current word and then open the quickfix list
 nnoremap <leader>gg :Ggrep! <cword><cr>:copen<cr>
+nnoremap <leader>jd :YcmCompleter GoTo<CR>
+nnoremap <leader>jc :YcmCompleter GetDoc<CR>
 
 """"""""""""""""""""""""""""""""""""""""""
 " Commands
