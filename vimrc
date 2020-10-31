@@ -57,6 +57,8 @@ Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-unimpaired'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
 
 " Code Completion
 Plugin 'Valloric/YouCompleteMe'
@@ -92,6 +94,7 @@ nnoremap * *``
 nnoremap <leader>gg :Ggrep! <cword><cr>:copen<cr>
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
 nnoremap <leader>jc :YcmCompleter GetDoc<CR>
+nnoremap <leader>gt :GitGutter<CR>
 
 """"""""""""""""""""""""""""""""""""""""""
 " Commands
