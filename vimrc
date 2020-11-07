@@ -96,7 +96,6 @@ nnoremap <leader>jd :YcmCompleter GoTo<CR>
 nnoremap <leader>jc :YcmCompleter GetDoc<CR>
 nnoremap <leader>gt :GitGutter<CR>
 " https://stackoverflow.com/questions/31805805/vim-close-buffer-with-nerdtree
-nnoremap c :bp\|bd #<CR>
 
 """"""""""""""""""""""""""""""""""""""""""
 " Commands
